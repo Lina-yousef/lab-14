@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png"
+        type="image/x-icon">
+    <title>Book App</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <%- include('../../layout/header') %>
+
+    <% books.forEach(book=>{ %>
+        <div class="card">
+            <img src="<%= book.img %>" alt="">
+            <h2><%= book.title %></h2>
+            <h3><%= book.authors %></h3>
+            <p><%= book.description %></p>
+            <form action="/books" method="post">
+                <input type="hidden" name="img" value="<%= book.img %>">
+                <input type="hidden" name="title" value="<%= book.title %>">
+                <input type="hidden" name="authors" value="<%= book.authors %>">
+                <input type="hidden" name="description" value="<%= book.description %>">
+                <input type="hidden" name="isbn" value="<%= book.isbn %>">
+                <input type="hidden" name="shelf" value="<%= book.shelf %>">              
+                
+            <button type="submit"> Select this book </button>
+            </form>
+        </div>
+    <% }) %>
+</body>
+
+</html>

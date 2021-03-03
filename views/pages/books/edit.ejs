@@ -1,0 +1,22 @@
+
+<form id="updateForm" action="/updateBook/<%=book.id%>?_method=PUT" method="post">
+
+    <input type="text" name="title"       value="<%=book.title%>"><br>
+    <input type="text" name="author"      value="<%=book.author%>"><br>
+    <input type="text" name="description" value="<%=book.description%>"><br>
+    <input type="text" name="isbn"        value="<%=book.isbn%>"><br>
+    <input type="text" name="img"         value="<%=book.img%>"><br>
+    
+    <input type="text" name="shelf"       value="<%=book.shelf%>"><br>
+    
+    <button type="submit"> Update Book</button><br>
+    
+</form>
+
+ <button type="submit" id="updateBtn" > Update Details </button>
+ <!-- <button type="submit"> Delete Book </button> -->
+
+ <script
+  src="https://code.jquery.com/jquery-2.2.4.js"></script>
+ <script src="/js/app.js"></script>
+ 

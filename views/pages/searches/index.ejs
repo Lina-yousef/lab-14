@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png"
+        type="image/x-icon">
+    <title>Book App</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <%- include('../../layout/header') %>
+    <main>
+        <section>
+            <ul>
+                <% booksList.forEach(book =>{  %>
+                    <li>
+                        <h3> <%=book.title%> </h3>
+                        <h4><%=book.author%></h4>
+                        <img src="<%=book.img%>" alt="">
+                    </li>
+                    <a href="/books/<%=book.id%>">Show more Details</a>
+
+                    <% }) %>
+            </ul>
+        </section>
+        <h4>Total Books : <%=booksList.length%> </h4>
+    </main>
+</body>
+
+</html>

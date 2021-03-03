@@ -1,0 +1,17 @@
+<div>
+      <img src="<%=book.img%>" alt="" >  
+      <h2> <%=book.title%></h2> 
+        <h3><%=book.author%></h3>
+        <textarea name="description" cols="30" rows="10"><%=book.description%></textarea>
+        <h4><%=book.isbn%></h4>
+        <h4><%=book.shelf%></h4>
+    </div>
+
+        <%- include('edit') %>
+
+<form id="deleteForm" action="/deleteBook/<%=book.id%>?_method=DELETE" method="post">
+
+        <button type="submit"> DELETE Book</button><br>
+
+
+    </form>
